@@ -85,8 +85,11 @@ function getSectionBackgroundColor(value) {
 
 export function decorateSectionStyles(main) {
   main.querySelectorAll(':scope > .section').forEach((section) => {
-    const { backgroundColor, padding } = section.dataset;
-    const sectionBackgroundColor = backgroundColor ? getSectionBackgroundColor(backgroundColor) : '';
+    const { backgroundColor, backgroundcolor, padding } = section.dataset;
+    const authoredBackgroundColor = backgroundColor || backgroundcolor;
+    const sectionBackgroundColor = authoredBackgroundColor
+      ? getSectionBackgroundColor(authoredBackgroundColor)
+      : '';
 
     if (sectionBackgroundColor) {
       section.style.backgroundColor = sectionBackgroundColor;

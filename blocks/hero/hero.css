@@ -9,7 +9,7 @@
   min-height: 800px;
 }
 
-.hero > div:not(:has(picture)) {
+.hero > div:last-child {
   max-width: 100%;
   color: var(--background-color);
   text-align: center;
@@ -29,7 +29,7 @@
   height: 100%;
 }
 
-.hero > div:not(:has(picture)) a:any-link {
+.hero > div:last-child a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -51,8 +51,8 @@
   white-space: nowrap;
 }
 
-.hero > div:not(:has(picture)) a:hover,
-.hero > div:not(:has(picture)) a:focus-visible {
+.hero > div:last-child a:hover,
+.hero > div:last-child a:focus-visible {
   border-color: var(--dark-color);
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -63,7 +63,7 @@
     padding: 40px 32px;
   }
 
-  .hero > div:not(:has(picture)) {
+  .hero > div:last-child {
     width: 40%;
   }
 }

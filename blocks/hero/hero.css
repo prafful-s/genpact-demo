@@ -28,6 +28,35 @@
   height: 100%;
 }
 
+.hero > div:not(:has(picture)) a:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 2.4em;
+  padding: 0.5em 1.2em;
+  background-color: var(--text-color);
+  color: var(--background-color);
+  font: inherit;
+  font-weight: 500;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hero > div:not(:has(picture)) a:hover,
+.hero > div:not(:has(picture)) a:focus-visible {
+  border-color: var(--dark-color);
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;

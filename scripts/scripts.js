@@ -70,12 +70,26 @@ function buildAutoBlocks() {
   }
 }
 
+function getSectionBackgroundColor(value) {
+  const backgroundColor = value.trim();
+  if (CSS.supports('background-color', backgroundColor)) return backgroundColor;
+
+  try {
+    const { hash } = new URL(backgroundColor, window.location.href);
+    const hashColor = decodeURIComponent(hash);
+    if (hashColor && CSS.supports('background-color', hashColor)) return hashColor;
+  } catch { /* ignore invalid URLs */ }
+
+  return '';
+}
+
 export function decorateSectionStyles(main) {
   main.querySelectorAll(':scope > .section').forEach((section) => {
     const { backgroundColor, padding } = section.dataset;
+    const sectionBackgroundColor = backgroundColor ? getSectionBackgroundColor(backgroundColor) : '';
 
-    if (backgroundColor && CSS.supports('background-color', backgroundColor)) {
-      section.style.backgroundColor = backgroundColor;
+    if (sectionBackgroundColor) {
+      section.style.backgroundColor = sectionBackgroundColor;
     }
 
     if (padding && CSS.supports('padding', padding)) {

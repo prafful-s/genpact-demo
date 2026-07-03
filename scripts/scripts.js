@@ -70,6 +70,20 @@ function buildAutoBlocks() {
   }
 }
 
+export function decorateSectionStyles(main) {
+  main.querySelectorAll(':scope > .section').forEach((section) => {
+    const { backgroundColor, padding } = section.dataset;
+
+    if (backgroundColor && CSS.supports('background-color', backgroundColor)) {
+      section.style.backgroundColor = backgroundColor;
+    }
+
+    if (padding && CSS.supports('padding', padding)) {
+      section.style.padding = padding;
+    }
+  });
+}
+
 /**
  * Decorates formatted links to style them as buttons.
  * @param {HTMLElement} main The main container element
@@ -118,6 +132,7 @@ export function decorateMain(main) {
   decorateIcons(main);
   buildAutoBlocks(main);
   decorateSections(main);
+  decorateSectionStyles(main);
   decorateBlocks(main);
   decorateButtons(main);
 }

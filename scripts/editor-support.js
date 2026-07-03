@@ -8,7 +8,7 @@ import {
   loadSections,
 } from './aem.js';
 import { decorateRichtext } from './editor-support-rte.js';
-import { decorateButtons, decorateMain } from './scripts.js';
+import { decorateButtons, decorateMain, decorateSectionStyles } from './scripts.js';
 
 let promiseChanges$ = Promise.resolve();
 
@@ -79,6 +79,7 @@ async function applyChanges(event) {
           decorateIcons(newSection);
           decorateRichtext(newSection);
           decorateSections(parentElement);
+          decorateSectionStyles(parentElement);
           decorateBlocks(parentElement);
           await loadSections(parentElement);
           element.remove();

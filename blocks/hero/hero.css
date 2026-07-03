@@ -9,7 +9,8 @@
   min-height: 800px;
 }
 
-.hero > div:last-child {
+.hero > div:nth-of-type(2),
+.hero [data-aue-prop="text"] {
   max-width: 100%;
   color: var(--background-color);
   text-align: center;
@@ -29,7 +30,8 @@
   height: 100%;
 }
 
-.hero > div:last-child a:any-link {
+.hero > div:nth-of-type(2) a:any-link,
+.hero [data-aue-prop="text"] a:any-link {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -51,8 +53,10 @@
   white-space: nowrap;
 }
 
-.hero > div:last-child a:hover,
-.hero > div:last-child a:focus-visible {
+.hero > div:nth-of-type(2) a:hover,
+.hero > div:nth-of-type(2) a:focus-visible,
+.hero [data-aue-prop="text"] a:hover,
+.hero [data-aue-prop="text"] a:focus-visible {
   border-color: var(--dark-color);
   background-color: var(--dark-color);
   color: var(--light-color);
@@ -63,7 +67,7 @@
     padding: 40px 32px;
   }
 
-  .hero > div:last-child {
+  .hero > div:nth-of-type(2) {
     width: 40%;
   }
 }

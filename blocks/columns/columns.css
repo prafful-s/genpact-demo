@@ -19,6 +19,12 @@
   display: block;
 }
 
+.columns > .columns-icon-row img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;

@@ -20,6 +20,12 @@
   display: block;
 }
 
+footer .columns a:any-link,
+footer .columns a:hover,
+footer .columns a:focus-visible {
+  color: var(--text-color);
+}
+
 main .columns a:any-link {
   box-sizing: border-box;
   display: inline-flex;

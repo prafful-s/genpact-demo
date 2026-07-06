@@ -204,6 +204,32 @@
     ]
   },
   {
+    "id": "submit-your-interest",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "heading",
+        "label": "Heading",
+        "value": "Let us show you the full power of Adobe Experience Platform."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "submitLabel",
+        "label": "Submit Label",
+        "value": "Submit"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "toastMessage",
+        "label": "Toast Message",
+        "value": "Thank you. Your information has been submitted."
+      }
+    ]
+  },
+  {
     "id": "hero",
     "fields": [
       {
